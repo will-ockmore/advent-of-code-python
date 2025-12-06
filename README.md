@@ -1,1 +1,3 @@
-# advent-of-code-2024
+# advent-of-code
+
+Python solutions for advent of code.
