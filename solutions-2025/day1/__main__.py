@@ -31,7 +31,9 @@ def part_2():
 
             d = (pos - amount)
 
-            amount -= pos
+            distance_to_first_zero = pos if pos > 0 else 100
+
+            amount -= distance_to_first_zero
 
             if amount >= 0:
                 times_on_zero += amount // 100 + 1
