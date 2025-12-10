@@ -1,15 +1,12 @@
-[tool.poetry]
+[project]
 name = "advent-of-code-2024"
 version = "0.1.0"
 description = ""
-authors = ["Will Ockmore <will.ockmore@gmail.com>"]
+authors = [{ name = "Will Ockmore", email = "will.ockmore@gmail.com" }]
+requires-python = ">=3.12,<4"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.12"
-ruff = "^0.8.4"
-
+dependencies = ["ruff>=0.8.4,<0.9"]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

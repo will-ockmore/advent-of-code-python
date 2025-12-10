@@ -13,7 +13,7 @@ def part_1():
     times_on_zero = 0
     for direction, amount in instructions:
         if direction == "L":
-            pos = ((pos + 10000) - amount) % 100
+            pos = (pos - amount) % 100
         else:
             pos = (pos + amount) % 100
 
@@ -28,18 +28,24 @@ def part_2():
     times_on_zero = 0
     for direction, amount in instructions:
         if direction == "L":
-            p = pos + 10000
-            d = (p - amount)
 
-            if amount >= pos:
-                times_on_zero += (amount-pos) // 100
+            d = (pos - amount)
+
+            amount -= pos
+
+            if amount >= 0:
+                times_on_zero += amount // 100 + 1
 
             pos = d % 100
         else:
             d = (pos + amount)
-            times_on_zero += d // 100
+
+            amount -= (100 - pos)
+
+            if amount >= 0:
+                times_on_zero += amount // 100 + 1
+
             pos = d % 100
-        print(times_on_zero)
 
     print(times_on_zero)
 
