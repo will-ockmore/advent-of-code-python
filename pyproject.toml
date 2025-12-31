@@ -1,12 +1,8 @@
 [project]
-name = "advent-of-code-2024"
+name = "advent-of-code-python"
 version = "0.1.0"
 description = ""
 authors = [{ name = "Will Ockmore", email = "will.ockmore@gmail.com" }]
 requires-python = ">=3.12,<4"
 readme = "README.md"
 dependencies = ["ruff>=0.8.4,<0.9"]
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"

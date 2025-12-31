@@ -1,4 +1,3 @@
-from collections import Counter
 from pathlib import Path
 
 with open(Path(__file__).parent / "input.txt") as f:

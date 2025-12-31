@@ -28,8 +28,7 @@ def part_2():
     times_on_zero = 0
     for direction, amount in instructions:
         if direction == "L":
-
-            d = (pos - amount)
+            d = pos - amount
 
             distance_to_first_zero = pos if pos > 0 else 100
 
@@ -40,9 +39,9 @@ def part_2():
 
             pos = d % 100
         else:
-            d = (pos + amount)
+            d = pos + amount
 
-            amount -= (100 - pos)
+            amount -= 100 - pos
 
             if amount >= 0:
                 times_on_zero += amount // 100 + 1
