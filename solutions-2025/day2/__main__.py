@@ -16,7 +16,7 @@ def part_1():
         start, end = id_range
         for n in range(start, end + 1):
             num = str(n)
-            if int(len(num)) % 2 == 0:
+            if len(num) % 2 == 0:
                 midpoint = len(num) // 2
                 if num[midpoint:] == num[:midpoint]:
                     count += n
@@ -30,10 +30,22 @@ def part_2():
         start, end = id_range
         for n in range(start, end + 1):
             num = str(n)
-            if int(len(num)) % 2 == 0:
-                midpoint = len(num) // 2
-                if num[midpoint:] == num[:midpoint]:
-                    count += n
+            midpoint = len(num) // 2
+
+            for substr_length in range(1, midpoint + 1):
+                # Try all substrings that are factors - so they can repeat to completion.
+                if len(num) % substr_length == 0:
+                    if (
+                        len(
+                            set(
+                                num[0 + i : substr_length + i]
+                                for i in range(0, len(num), substr_length)
+                            )
+                        )
+                        == 1
+                    ):
+                        count += n
+                        break
     print(count)
 
 
